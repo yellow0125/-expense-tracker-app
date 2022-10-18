@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Color from '../constants/Color'
 import ExpensesOutput from '../components/ExpensesOutput'
@@ -14,7 +14,7 @@ export default function AllExpensesScreen() {
   }
   return (
     <View style={styles.screen}>
-      <ExpensesOutput expenses={expenses} period="All Expenses" />
+      <ExpensesOutput expenses={expenses}/>
     </View>
   );
 }
@@ -39,4 +39,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
+
 });
