@@ -4,12 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Color from './constants/Color'
+import { MaterialIcons, FontAwesome  } from "@expo/vector-icons";
+import IconButton from './components/UI/IconButton'
 import AllScreen from './screens/AllScreen'
 import ImportantScreen from './screens/ImportantScreen'
 import AddScreen from './screens/AddScreen'
-import Color from './constants/Color'
-import { MaterialIcons, FontAwesome  } from "@expo/vector-icons";
-import IconButton from './components/IconButton'
 
 const Stack = createNativeStackNavigator()
 const BottomTabs = createBottomTabNavigator()
@@ -20,7 +20,6 @@ function ExpensesOverview() {
 			screenOptions={({ navigation }) => ({
 				headerStyle: {
 					backgroundColor: Color.TitleBgc,
-					
 				},
 				headerTintColor: Color.White,
 				headerTitleAlign: 'center',
@@ -70,7 +69,11 @@ export default function App() {
 	return (
 		<SafeAreaView style={styles.container}>
 			<NavigationContainer>
-				<Stack.Navigator>
+				<Stack.Navigator screenOptions={{
+          headerStyle: { backgroundColor: Color.TitleBgc },
+          headerTintColor: Color.White,
+          headerTitleAlign: 'center'
+        }}>
 					<Stack.Screen
 						name="ExpensesOverview"
 						component={ExpensesOverview}

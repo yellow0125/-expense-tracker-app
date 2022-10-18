@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
-import Column from './Column'
+import Column from '../UI/Column'
 import ExpensesList from './ExpensesList'
 
 export default function ExpensesOutput({expenses}) {

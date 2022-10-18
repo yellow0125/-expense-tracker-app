@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Color from '../constants/Color'
-import ExpensesOutput from '../components/ExpensesOutput'
+import ExpensesOutput from '../components/Output/ExpensesOutput'
 
 export default function AllExpensesScreen() {
   const expenses = 's'
