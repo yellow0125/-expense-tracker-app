@@ -4,7 +4,11 @@ import React from 'react'
 export default function MainButton({ children, onPress, mode, style }) {
   return (
     <View style={style}>
-      <Pressable onPress={onPress} style={({ pressed }) => pressed && styles.pressed}>
+      <Pressable
+        android_ripple={{ color: '#223355', foreground: true }}
+        onPress={onPress}
+        style={({ pressed }) => pressed && styles.pressed}
+        >
         <View style={[styles.button, (mode === 'negative') ? styles.flat : null]}>
           <Text style={[styles.buttonText, (mode === 'negative') ? styles.flatText : null]}>{children}</Text>
         </View>

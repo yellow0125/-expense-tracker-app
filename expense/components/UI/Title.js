@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function Title({children}) {
+export default function Title({ children }) {
   return (
     <View>
       <Text style={styles.title}>{children}</Text>

@@ -7,12 +7,11 @@ export default function ExpensesItem({ expense }) {
   const navigation = useNavigation()
   function itemPressed() {
     navigation.navigate('EditScreen', {
-			expenseId: expense.key,
+      expenseId: expense.key,
       amount: expense.amount,
       description: expense.description,
-      isImportant:expense.isImportant,
-      
-		});
+      isImportant: expense.isImportant
+    });
   }
 
   return (
@@ -48,7 +47,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.4
-
   },
   textBase: {
     color: '#e4d9fd'
@@ -59,7 +57,6 @@ const styles = StyleSheet.create({
   },
   amountContainer: {
     paddingHorizontal: 12,
-    // paddingVertical: 4,
     borderRadius: 4,
     backgroundColor: 'white',
     justifyContent: 'center',

@@ -1,8 +1,6 @@
 import {
   View,
-  TextInput,
   StyleSheet,
-  Text,
   Alert,
 } from 'react-native'
 import React, { useState } from 'react'
@@ -13,21 +11,16 @@ import { deleteFromDB } from '../firebase/firestore';
 
 export default function EditScreen({ navigation, route }) {
   const { expenseId, isImportant, description } = route.params
-  
-  console.log(route.params)
-
   async function onDelete() {
     await deleteFromDB(expenseId)
     navigation.goBack()
   }
   function setStatus() {
-    //update from database
-    navigation.goBack()
+    navigation.navigate('ImportantScreen')
   }
 
   let content = 'Mark as Important'
-
-  if(isImportant){
+  if (isImportant) {
     content = 'Mark as Unimportant'
   }
 

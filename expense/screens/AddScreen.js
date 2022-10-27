@@ -46,6 +46,7 @@ export default function AddScreen({ navigation }) {
   function cancelForm() {
     navigation.goBack()
   }
+  
   function submitForm() {
     const expenseData = {
       amount: parseFloat(inputs.amount.value),

@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Color from './constants/Color'
-import { MaterialIcons, FontAwesome  } from "@expo/vector-icons";
+import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import IconButton from './components/UI/IconButton'
 import AllScreen from './screens/AllScreen'
 import ImportantScreen from './screens/ImportantScreen'
@@ -47,7 +47,7 @@ function ExpensesOverview() {
 					title: "All Expenses",
 					tabBarLabel: "All Expenses",
 					tabBarIcon: ({ color, size }) => (
-						<MaterialIcons  name="attach-money" size={size} color={color} />
+						<MaterialIcons name="attach-money" size={size} color={color} />
 					),
 				}}
 			/>
@@ -70,10 +70,10 @@ export default function App() {
 		<SafeAreaView style={styles.container}>
 			<NavigationContainer>
 				<Stack.Navigator screenOptions={{
-          headerStyle: { backgroundColor: Color.TitleBgc },
-          headerTintColor: Color.White,
-          headerTitleAlign: 'center'
-        }}>
+					headerStyle: { backgroundColor: Color.TitleBgc },
+					headerTintColor: Color.White,
+					headerTitleAlign: 'center'
+				}}>
 					<Stack.Screen
 						name="ExpensesOverview"
 						component={ExpensesOverview}
@@ -83,7 +83,7 @@ export default function App() {
 						name='EditScreen'
 						component={EditScreen}
 						options={{
-							title:'Edit Expense',
+							title: 'Edit Expense',
 							presentation: "modal",
 						}}
 					/>
@@ -91,7 +91,7 @@ export default function App() {
 						name='AddScreen'
 						component={AddScreen}
 						options={{
-							title:'Add Expense',
+							title: 'Add Expense',
 							presentation: "modal",
 						}}
 					/>

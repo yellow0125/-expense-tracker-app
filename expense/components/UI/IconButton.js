@@ -8,6 +8,7 @@ export default function IconButton({ icon, size, color, onPress }) {
     <Pressable
       onPress={onPress}
       style={({ pressed }) => pressed && styles.pressed}
+      android_ripple={{ color: '#223355', foreground: true }}
     >
       <View style={styles.buttonContainer}>
         <Ionicons name={icon} size={size} color={color} />
