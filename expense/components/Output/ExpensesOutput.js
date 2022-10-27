@@ -8,13 +8,10 @@ export default function ExpensesOutput({expenses}) {
     <Column style={styles.column}>
       <ExpensesList expenses={expenses} />
     </Column>
-
   )
 }
-
 const styles = StyleSheet.create({
   column: {
-    // backgroundColor: 'lime',
     flex: 1,
   },
 })
