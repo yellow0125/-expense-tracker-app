@@ -5,10 +5,13 @@ import { useNavigation } from '@react-navigation/native';
 export default function ExpensesItem({ expense }) {
 
   const navigation = useNavigation()
-
   function itemPressed() {
     navigation.navigate('EditScreen', {
-			expenseId: expense.key
+			expenseId: expense.key,
+      amount: expense.amount,
+      description: expense.description,
+      isImportant:expense.isImportant,
+      
 		});
   }
 

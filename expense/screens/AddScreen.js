@@ -10,6 +10,7 @@ import React, { useState } from 'react'
 import Color from '../constants/Color'
 import MainButton from '../components/UI/MainButton'
 import { writeToDB } from '../firebase/firestore';
+import Title from '../components/UI/Title';
 
 export default function AddScreen({ navigation }) {
   const [inputs, setInputs] = useState({
@@ -20,13 +21,17 @@ export default function AddScreen({ navigation }) {
     description: {
       value: '',
       isValid: true,
-    }
+    },
+    isImportant: {
+      value: false,
+      isValid: true,
+    },
   });
   const formIsValid = (inputs.amount.isValid && inputs.description.isValid)
 
   const onDataAdd = async function (newInputs) {
     await writeToDB(newInputs)
-      navigation.goBack()
+    navigation.goBack()
   }
 
   function inputChangeHandler(identifier, input) {
@@ -45,9 +50,10 @@ export default function AddScreen({ navigation }) {
     const expenseData = {
       amount: parseFloat(inputs.amount.value),
       description: inputs.description.value,
+      isImportant: false,
     }
     const amountIsValid = (!isNaN(expenseData.amount) && expenseData.amount > 0);
-    const descriptionIsValid = expenseData.description.trim().length > 0;
+    const descriptionIsValid = (expenseData.description.trim().length > 0 && isNaN(expenseData.description));
     if (amountIsValid && descriptionIsValid) {
       onDataAdd(expenseData)
     } else {
@@ -55,6 +61,7 @@ export default function AddScreen({ navigation }) {
         return {
           amount: { value: temp.amount.value, isValid: amountIsValid },
           description: { value: temp.description.value, isValid: descriptionIsValid },
+          isImportant: { value: false, isValid: descriptionIsValid },
         }
       })
       return;
@@ -66,7 +73,7 @@ export default function AddScreen({ navigation }) {
         Keyboard.dismiss();
       }}>
       <View style={styles.screen}>
-        <Text style={styles.title}>Your Expense</Text>
+        <Title>Your Expense</Title>
         <View>
           <Text style={styles.label}>Amount</Text>
           <TextInput
