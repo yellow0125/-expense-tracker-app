@@ -10,13 +10,11 @@ export default function ExpensesList({expenses}) {
     <View style={styles.container}>
     <FlatList
       data={expenses}
-      keyExtractor={(item, index) => item.id}
-      renderItem={(expenseData) => {
-
-        const expense = expenseData.item;
+      keyExtractor={(item) => item.id}
+      renderItem={({item}) => {
 
         return (
-          <ExpensesItem expense={expense}/>
+          <ExpensesItem expense={item}/>
         );
       }}
     />

@@ -7,9 +7,8 @@ export default function ExpensesItem({ expense }) {
   const navigation = useNavigation()
 
   function itemPressed() {
-    console.log("Item pressed")
     navigation.navigate('EditScreen', {
-			expenseId: expense.id
+			expenseId: expense.key
 		});
   }
 
