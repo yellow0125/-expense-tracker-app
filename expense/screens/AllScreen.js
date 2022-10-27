@@ -35,9 +35,10 @@ export default function AllExpensesScreen() {
       </View>
     )
   }
+
   return (
     <View style={styles.screen}>
-      <ExpensesOutput expenses={expenses}/>
+      <ExpensesOutput expenses={expenses} />
     </View>
   );
 }

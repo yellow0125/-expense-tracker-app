@@ -10,6 +10,7 @@ import IconButton from './components/UI/IconButton'
 import AllScreen from './screens/AllScreen'
 import ImportantScreen from './screens/ImportantScreen'
 import AddScreen from './screens/AddScreen'
+import EditScreen from './screens/EditScreen'
 
 const Stack = createNativeStackNavigator()
 const BottomTabs = createBottomTabNavigator()
@@ -33,7 +34,6 @@ function ExpensesOverview() {
 						size={24}
 						color={tintColor}
 						onPress={() => {
-							console.log("Add expense");
 							navigation.navigate('AddScreen');
 						}}
 					/>
@@ -41,7 +41,7 @@ function ExpensesOverview() {
 			})}
 		>
 			<BottomTabs.Screen
-				name="ALLExpenses"
+				name="AllScreen"
 				component={AllScreen}
 				options={{
 					title: "All Expenses",
@@ -52,7 +52,7 @@ function ExpensesOverview() {
 				}}
 			/>
 			<BottomTabs.Screen
-				name="ImportantExpenses"
+				name="ImportantScreen"
 				component={ImportantScreen}
 				options={{
 					title: "Important Expenses",
@@ -80,10 +80,18 @@ export default function App() {
 						options={{ headerShown: false }}
 					/>
 					<Stack.Screen
+						name='EditScreen'
+						component={EditScreen}
+						options={{
+							title:'Edit Expense',
+							presentation: "modal",
+						}}
+					/>
+					<Stack.Screen
 						name='AddScreen'
 						component={AddScreen}
 						options={{
-							title:'AddExpense',
+							title:'Add Expense',
 							presentation: "modal",
 						}}
 					/>

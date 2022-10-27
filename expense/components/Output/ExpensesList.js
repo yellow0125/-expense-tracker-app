@@ -3,6 +3,9 @@ import React from 'react'
 import ExpensesItem from './ExpensesItem';
 
 export default function ExpensesList({expenses}) {
+
+  
+
   return (
     <View style={styles.container}>
     <FlatList
@@ -13,7 +16,7 @@ export default function ExpensesList({expenses}) {
         const expense = expenseData.item;
 
         return (
-          <ExpensesItem expense={expense} />
+          <ExpensesItem expense={expense}/>
         );
       }}
     />
