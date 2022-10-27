@@ -7,15 +7,42 @@ import React, { useState } from 'react'
 import Color from '../constants/Color'
 import MainButton from '../components/UI/MainButton'
 import Title from '../components/UI/Title'
-import { deleteFromDB } from '../firebase/firestore';
+import { deleteFromDB, updateFromDB } from '../firebase/firestore';
+
 
 export default function EditScreen({ navigation, route }) {
   const { expenseId, isImportant, description } = route.params
+
+  const confirmDeleteHandler = () => {
+    Alert.alert("DELETE", "Are you sure you want to delete this?", [
+      { text: "No", style: "cancel", onPress: () => { } },
+      { text: "Yes", style: "destructive", onPress: onDelete }
+    ]);
+    return;
+  }
+
+  const confirmImpHandler = () => {
+    if (!isImportant) {
+      Alert.alert('Important', 'Are you sure you want to mark this as important?', [
+        { text: "No", style: "cancel", onPress: () => { } },
+        { text: "Yes", onPress: setImp }
+      ]);
+      return;
+    } else {
+      Alert.alert('Unimportant', 'Are you sure you want to mark this as unimportant?', [
+        { text: "No", style: "cancel", onPress: () => { } },
+        { text: "Yes", onPress: setImp }
+      ]);
+      return;
+    }
+  }
+
   async function onDelete() {
     await deleteFromDB(expenseId)
     navigation.goBack()
   }
-  function setStatus() {
+  async function setImp() {
+    await updateFromDB(expenseId, !isImportant)
     navigation.navigate('ImportantScreen')
   }
 
@@ -30,10 +57,10 @@ export default function EditScreen({ navigation, route }) {
       <View style={styles.buttons}>
         <MainButton
           style={styles.button}
-          onPress={onDelete}>Delete</MainButton>
+          onPress={confirmDeleteHandler}>Delete</MainButton>
         <MainButton
           style={styles.button}
-          onPress={setStatus}
+          onPress={confirmImpHandler}
         >{content}</MainButton>
       </View>
     </View>
