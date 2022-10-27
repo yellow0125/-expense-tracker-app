@@ -2,9 +2,32 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Color from '../constants/Color'
 import ExpensesOutput from '../components/Output/ExpensesOutput'
-
+import { useState, useEffect } from 'react';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { firestore } from '../firebase/firebase-setup';
 export default function AllExpensesScreen() {
-  const expenses = 's'
+
+  const [expenses, setExpenses] = useState([])
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(firestore, "expenses"), (querySnapshot) => {
+      if (querySnapshot.empty) {
+        setExpenses([]);
+        return;
+      }
+      setExpenses(
+        querySnapshot.docs.map((snapDoc) => {
+          let data = snapDoc.data();
+          data = { ...data, key: snapDoc.id };
+          return data;
+        })
+      )
+    })
+    return () => {
+      unsubscribe();
+    };
+  }, [])
+
   if (expenses.length == 0) {
     return (
       <View style={styles.empty}>
