@@ -22,7 +22,7 @@ export default function ExpensesItem({ expense }) {
         pressed ? styles.pressed : null,
       ]}>
       <Row style={[styles.row, styles.expenseItem]}>
-        <View >
+        <View>
           <Text style={[styles.textBase, styles.description]}>{expense.description}</Text>
         </View>
         <View style={styles.amountContainer}>

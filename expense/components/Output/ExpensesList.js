@@ -8,7 +8,6 @@ export default function ExpensesList({ expenses }) {
     <View style={styles.container}>
       <FlatList
         data={expenses}
-        keyExtractor={(item) => item.id}
         renderItem={({ item }) => {
           return (
             <ExpensesItem expense={item} />

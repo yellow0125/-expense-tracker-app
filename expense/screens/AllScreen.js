@@ -3,14 +3,15 @@ import React from 'react'
 import Color from '../constants/Color'
 import ExpensesOutput from '../components/Output/ExpensesOutput'
 import { useState, useEffect } from 'react';
-import { collection, onSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { firestore } from '../firebase/firebase-setup';
 export default function AllExpensesScreen() {
 
   const [expenses, setExpenses] = useState([])
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(firestore, "expenses"), (querySnapshot) => {
+    const q = query(collection(firestore, "expenses"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
       if (querySnapshot.empty) {
         setExpenses([]);
         return;
@@ -41,6 +42,7 @@ export default function AllExpensesScreen() {
       <ExpensesOutput expenses={expenses} />
     </View>
   );
+
 }
 const styles = StyleSheet.create({
   screen: {
