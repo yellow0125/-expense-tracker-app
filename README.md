@@ -6,24 +6,20 @@
 *There are 4 screens in this app*
 
 ## ScreenShots
-<img src="https://github.com/yellow0125/hw1-guessing/blob/main/img/startscreen.png" height="500" alt="startscreen"/>
+<img src="https://github.com/yellow0125/expense-tracker-app/blob/implement/img/1.png" height="500" alt="1"/>
 
-Screenshot of the first screen. The two buttons, one it is used to reset and clean the input and the other to confirm user's input. It accepts only number form 1020 to 1029.
+Screenshot of the home screen and add screen. At the beginning the database is empty, it will show a message to user. Then add an expense, request the amount cannot be empty and must be number, and description cannot be empty and mush be string.
 
-If the input value is invalid, an alert will be shown to the user with a button to reset the input. 
+<img src="https://github.com/yellow0125/expense-tracker-app/blob/implement/img/2.png" height="500" alt="2"/>    
 
-<img src="https://github.com/yellow0125/hw1-guessing/blob/main/img/gaming.png" height="500" alt="startscreen"/>    
+Screensho of home screen two bottom tabs, all expenses and important expenses showed in list.
 
-The Game Screen is shown in a modal, which shows a message to the user notifying them if the number they entered matches what you have chosen or if it's bigger or smaller.   
-- when user pick a number and it will also make the modal visible
-- If they have won they will see another message congratulating them.  
-- If they haven't won, users can choose to continue the game (taken back to the starting game to guess again) or choose to end the game. 
+<img src="https://github.com/yellow0125/expense-tracker-app/blob/implement/img/3.png" height="500" alt="3"/>    
 
-<img src="https://github.com/yellow0125/hw1-guessing/blob/main/img/gameOverScreen.png" height="500" alt="startscreen"/>    
-
-- If the user guessed the number right, the game is over. On this screen, it is shown a picture with a URL constructed based on the chosen value, e.g. if the chosen value is 1024 the URL should be https://picsum.photos/id/1024/100/100.
-- If user had chosen to finish the game without guessing correctly, it will show them a sad smiley face.
-- there will be a button to start the game again where all the game states (including the chosen number) are reset.
+When user tab an expense it will navigate to edit screen of the target expense, you can delete or modify the status of its important. All of these operation will have a ALERT.
+- confirm to delete
+- confirm mark as important
+- confirm mark as unimportant
 
 ## Install and Use
 
