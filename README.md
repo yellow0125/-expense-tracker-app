@@ -10,8 +10,10 @@
 
 Screenshot of the home screen and add screen. At the beginning the database is empty, it will show a message to user. Then add an expense, request the amount cannot be empty and must be number, and description cannot be empty and mush be string.
 
-<img src="https://github.com/yellow0125/expense-tracker-app/blob/implement/img/2.png" height="400" alt="2"/>    
 
+<img src="https://github.com/yellow0125/expense-tracker-app/blob/implement/img/2.png" height="400" alt="2"/> 
+
+*also there is a Loading Component by using ActivityIndicator*
 Screensho of home screen two bottom tabs, all expenses and important expenses showed in list.
 
 <img src="https://github.com/yellow0125/expense-tracker-app/blob/implement/img/3.png" height="400" alt="3"/>    
