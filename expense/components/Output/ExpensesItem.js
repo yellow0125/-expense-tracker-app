@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   itemBox: {
     padding: 12,
     backgroundColor: Color.White,
-    marginVertical: 5,
+    marginVertical: 10,
     borderRadius: 6,
     elevation: 3,
     shadowColor: Color.ShadowBg,
