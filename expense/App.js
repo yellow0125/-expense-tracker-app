@@ -26,7 +26,7 @@ function ExpensesOverview() {
 				headerTitleAlign: 'center',
 				tabBarStyle: {
 					backgroundColor: Color.BgDarkGreen,
-					height: 60,
+					height: 80,
 				},
 				tabBarActiveTintColor: Color.BgLighterYellow,
 				tabBarInactiveTintColor: Color.Grey,

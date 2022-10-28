@@ -57,6 +57,7 @@ export default function AddScreen({ navigation }) {
     const descriptionIsValid = (expenseData.description.trim().length > 0 && isNaN(expenseData.description));
     if (amountIsValid && descriptionIsValid) {
       onDataAdd(expenseData)
+      Keyboard.dismiss()
     } else {
       setInputs((temp) => {
         return {
@@ -74,7 +75,7 @@ export default function AddScreen({ navigation }) {
         Keyboard.dismiss();
       }}>
       <View style={styles.screen}>
-        <Title num={80}>Your Expense</Title>
+        <Title num={30}>Your Expense</Title>
         <View>
           <Text style={styles.label}>Amount</Text>
           <TextInput
@@ -89,15 +90,16 @@ export default function AddScreen({ navigation }) {
         <View>
           <Text style={styles.label}>Description</Text>
           <TextInput
-            style={[styles.input, { minHeight: 100, textAlignVertical: 'top', }]}
+            style={[styles.input, { minHeight: 100, textAlignVertical: 'top'}]}
             blurOnSubmit
             autoCaptalize="none"
             keyboardType="default"
-            // multiline='true'
+            multiline='true'
             onChangeText={(newinput) => { inputChangeHandler('description', newinput) }}
             value={inputs.description.value}
           />
         </View>
+        {(!formIsValid) && <Text style={styles.invalidInput}>Invalid inputs - Please check the entered DATA!</Text>}
         <View style={styles.buttons}>
           <MainButton
             style={styles.button}
@@ -109,7 +111,6 @@ export default function AddScreen({ navigation }) {
             disabled={inputs.length ? false : true}
           >Confirm</MainButton>
         </View>
-        {(!formIsValid) && <Text style={styles.invalidInput}>Invalid inputs - Please check the entered DATA!</Text>}
       </View>
     </TouchableWithoutFeedback>
   )
@@ -148,9 +149,9 @@ const styles = StyleSheet.create({
     minWidth: 100,
   },
   invalidInput: {
-    color: Color.BgLighterYellow,
+    color: Color.Red,
     marginTop: 25,
-    fontSize: 20,
+    fontSize: 18,
     alignSelf: 'center',
   }
 })

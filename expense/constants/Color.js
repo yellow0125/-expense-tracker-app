@@ -8,4 +8,6 @@ export default {
 	Black: '#0d081b',
 	transparent: 'transparent',
 	ShadowBg: '#004529',
+	Red:'#ef5b9c',
+	Orange:'#f47920'
 }

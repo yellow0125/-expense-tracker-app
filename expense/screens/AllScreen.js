@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Color.BgLightGreen,
-
   },
   text: {
     color: Color.White,
