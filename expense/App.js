@@ -26,7 +26,7 @@ function ExpensesOverview() {
 				headerTitleAlign: 'center',
 				tabBarStyle: {
 					backgroundColor: Color.BgDarkGreen,
-					height: 80,
+					height: 60,
 				},
 				tabBarActiveTintColor: Color.BgLighterYellow,
 				tabBarInactiveTintColor: Color.Grey,
@@ -48,7 +48,7 @@ function ExpensesOverview() {
 				options={{
 					title: "All Expenses",
 					tabBarLabel: "All Expenses",
-					tabBarLabelStyle: { fontSize: 16 },
+					tabBarLabelStyle: { fontSize: 13 },
 					tabBarIcon: ({ color, size }) => (
 						<MaterialIcons name="attach-money" size={size} color={color} />
 					),
@@ -60,7 +60,7 @@ function ExpensesOverview() {
 				options={{
 					title: "Important Expenses",
 					tabBarLabel: "Important",
-					tabBarLabelStyle: { fontSize: 16 },
+					tabBarLabelStyle: { fontSize: 13 },
 					tabBarIcon: ({ color, size }) => (
 						<FontAwesome name="exclamation" size={size} color={color} />
 					),

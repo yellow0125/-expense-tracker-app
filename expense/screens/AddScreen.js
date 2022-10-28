@@ -94,7 +94,6 @@ export default function AddScreen({ navigation }) {
             blurOnSubmit
             autoCaptalize="none"
             keyboardType="default"
-            multiline='true'
             onChangeText={(newinput) => { inputChangeHandler('description', newinput) }}
             value={inputs.description.value}
           />
