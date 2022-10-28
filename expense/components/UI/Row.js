@@ -3,14 +3,14 @@ import React from 'react'
 
 export default function Row({ children, style }) {
 	return (
-		<View style={[styles.default_style, style]}>
+		<View style={[styles.screen, style]}>
 			{children}
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
-	default_style: {
+	screen: {
 		flexDirection: 'row',
 	}
 });

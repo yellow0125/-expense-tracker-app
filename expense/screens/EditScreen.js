@@ -2,6 +2,8 @@ import {
   View,
   StyleSheet,
   Alert,
+  Image,
+  Dimensions
 } from 'react-native'
 import React, { useState } from 'react'
 import Color from '../constants/Color'
@@ -53,7 +55,12 @@ export default function EditScreen({ navigation, route }) {
 
   return (
     <View style={styles.screen}>
-      <Title>{description}</Title>
+      <Image
+            source={require('../assets/money.png')}
+            style={styles.image}
+            resizeMode="cover"
+          />
+      <Title num={0}>{description}</Title>
       <View style={styles.buttons}>
         <MainButton
           style={styles.button}
@@ -72,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'stretch',
-    backgroundColor: Color.Bgc,
+    backgroundColor: Color.BgDarkGreen,
     paddingHorizontal: 10,
     paddingTop: 10,
   },
@@ -84,5 +91,16 @@ const styles = StyleSheet.create({
   button: {
     marginHorizontal: 15,
     minWidth: 100,
+  },
+  image:{
+    width: Dimensions.get('window').width * 0.5,
+    height: Dimensions.get('window').width * 0.5,
+    borderRadius: Dimensions.get('window').width * 0.5 / 2,
+    borderWidth: 2,
+    borderColor: Color.BgDarkGreen,
+    overflow: "hidden",
+    marginVertical: Dimensions.get('window').height / 30,
+    alignSelf: "center",
+    justifyContent: 'center',
   },
 })

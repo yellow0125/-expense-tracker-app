@@ -1,11 +1,12 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Color from '../../constants/Color';
 
 export default function MainButton({ children, onPress, mode, style }) {
   return (
     <View style={style}>
       <Pressable
-        android_ripple={{ color: '#223355', foreground: true }}
+        android_ripple={{ color: Color.Grey, foreground: true }}
         onPress={onPress}
         style={({ pressed }) => pressed && styles.pressed}
         >
@@ -20,24 +21,25 @@ export default function MainButton({ children, onPress, mode, style }) {
 const styles = StyleSheet.create({
   button: {
     borderRadius: 4,
-    padding: 8,
-    backgroundColor: '#3e04c3',
+    padding: 10,
+    backgroundColor: Color.BgLighterYellow,
     minWidth: 80,
   },
   flat: {
-    backgroundColor: 'transparent'
+    backgroundColor: Color.transparent
   },
   buttonText: {
-    color: 'white',
+    color: Color.TextGreen,
     textAlign: 'center',
+    fontWeight:'bold',
+    fontSize:15,
   },
   flatText: {
-    color: '#3e04c3',
+    color: Color.White,
   },
   pressed: {
     opacity: 0.75,
     borderRadius: 4,
-    backgroundColor: '#c6affc',
   }
 
 });

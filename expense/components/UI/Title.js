@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import Color from '../../constants/Color'
 
-export default function Title({ children }) {
+export default function Title({ children, num }) {
   return (
     <View>
-      <Text style={styles.title}>{children}</Text>
+      <Text style={[styles.title, { marginTop: num }]}>{children}</Text>
     </View>
   )
 }
@@ -12,10 +13,9 @@ export default function Title({ children }) {
 const styles = StyleSheet.create({
   title: {
     fontSize: 30,
-    color: 'white',
+    color: Color.White,
     fontWeight: 'bold',
     justifyContent: 'flex-start',
     alignSelf: 'center',
-    marginTop: 100,
   },
 })

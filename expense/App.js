@@ -20,18 +20,20 @@ function ExpensesOverview() {
 		<BottomTabs.Navigator
 			screenOptions={({ navigation }) => ({
 				headerStyle: {
-					backgroundColor: Color.TitleBgc,
+					backgroundColor: Color.BgDarkGreen,
 				},
 				headerTintColor: Color.White,
 				headerTitleAlign: 'center',
 				tabBarStyle: {
-					backgroundColor: Color.TitleBgc,
+					backgroundColor: Color.BgDarkGreen,
+					height: 60,
 				},
-				tabBarActiveTintColor: Color.Yellow,
+				tabBarActiveTintColor: Color.BgLighterYellow,
+				tabBarInactiveTintColor: Color.Grey,
 				headerRight: ({ tintColor }) => (
 					<IconButton
 						icon="add"
-						size={24}
+						size={30}
 						color={tintColor}
 						onPress={() => {
 							navigation.navigate('AddScreen');
@@ -46,6 +48,7 @@ function ExpensesOverview() {
 				options={{
 					title: "All Expenses",
 					tabBarLabel: "All Expenses",
+					tabBarLabelStyle: { fontSize: 16 },
 					tabBarIcon: ({ color, size }) => (
 						<MaterialIcons name="attach-money" size={size} color={color} />
 					),
@@ -57,6 +60,7 @@ function ExpensesOverview() {
 				options={{
 					title: "Important Expenses",
 					tabBarLabel: "Important",
+					tabBarLabelStyle: { fontSize: 16 },
 					tabBarIcon: ({ color, size }) => (
 						<FontAwesome name="exclamation" size={size} color={color} />
 					),
@@ -70,7 +74,7 @@ export default function App() {
 		<SafeAreaView style={styles.container}>
 			<NavigationContainer>
 				<Stack.Navigator screenOptions={{
-					headerStyle: { backgroundColor: Color.TitleBgc },
+					headerStyle: { backgroundColor: Color.BgDarkGreen },
 					headerTintColor: Color.White,
 					headerTitleAlign: 'center'
 				}}>
@@ -97,7 +101,7 @@ export default function App() {
 					/>
 				</Stack.Navigator>
 			</NavigationContainer>
-			<StatusBar style="auto" backgroundColor={Color.TitleBgc} />
+			<StatusBar style="auto" backgroundColor={Color.BgDarkGreen} />
 		</SafeAreaView>
 	);
 }
